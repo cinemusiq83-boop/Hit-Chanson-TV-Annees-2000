@@ -197,8 +197,9 @@ button {
 }
 
 /* ══════════════════════════════════════
-   LOWER THIRD — design de la photo
+   LOWER THIRD
 ══════════════════════════════════════ */
+
 #lowerThird {
   --red-h: calc(80 * var(--u));
   --white-h: calc(50 * var(--u));
@@ -220,113 +221,307 @@ button {
   z-index: 1;
 }
 
-/* 6 lignes (positions et longueurs mesurées sur la photo) */
-.l-1 { top: calc(30.5 * var(--u)); left: 0; width: calc(1569 * var(--u)); background-color: #ffffff; }
-.l-1.lt-enter { animation: lineDraw 0.6s ease forwards 0.1s, scanMove 1.8s ease-in-out 0.7s infinite alternate; }
+/* LIGNES ANIMÉES */
 
-.l-2 { top: calc(47.5 * var(--u)); left: calc(8 * var(--u)); width: calc(1273 * var(--u)); background-color: #ffffff; }
-.l-2.lt-enter { animation: lineDraw 0.6s ease forwards 0.2s, scanMoveInverse 1.5s ease-in-out 0.8s infinite alternate; }
+.l-1 {
+  top: calc(30.5 * var(--u));
+  left: 0;
+  width: calc(1569 * var(--u));
+  background: #fff;
+}
+.l-1.lt-enter {
+  animation: lineDraw .45s cubic-bezier(.16, 1, .3, 1) forwards .22s,
+  scanMove 1.8s ease-in-out .7s infinite alternate;
+}
 
-.l-3 { top: calc(64 * var(--u)); left: 0; width: calc(1361 * var(--u)); height: calc(4 * var(--u)); background-color: #c0191a; }
-.l-3.lt-enter { animation: lineDraw 0.6s ease forwards 0.3s, scanMove 1.2s ease-in-out 0.9s infinite alternate; }
+.l-2 {
+  top: calc(47.5 * var(--u));
+  left: calc(8 * var(--u));
+  width: calc(1273 * var(--u));
+  background: #fff;
+}
+.l-2.lt-enter {
+  animation: lineDraw .45s cubic-bezier(.16, 1, .3, 1) forwards .32s,
+  scanMoveInverse 1.5s ease-in-out .8s infinite alternate;
+}
 
-.l-4 { top: calc(81.5 * var(--u)); left: calc(16 * var(--u)); width: calc(1206 * var(--u)); background-color: #ffffff; }
-.l-4.lt-enter { animation: lineDraw 0.6s ease forwards 0.4s, scanMoveInverse 2s ease-in-out 1s infinite alternate; }
+.l-3 {
+  top: calc(64 * var(--u));
+  left: 0;
+  width: calc(1361 * var(--u));
+  height: calc(4 * var(--u));
+  background: #c0191a;
+}
+.l-3.lt-enter {
+  animation: lineDraw .35s cubic-bezier(.16, 1, .3, 1) forwards .03s,
+  scanMove 1.2s ease-in-out .9s infinite alternate;
+}
 
-/* ligne 5 + sa queue vers le logo (a) */
-.l-5a { top: calc(99.5 * var(--u)); left: calc(-124 * var(--u)); width: calc(124 * var(--u)); background-color: #ffffff; transform-origin: right; }
-.l-5a.lt-enter { animation: lineDraw 0.6s ease forwards 0.5s; }
+.l-4 {
+  top: calc(81.5 * var(--u));
+  left: calc(16 * var(--u));
+  width: calc(1206 * var(--u));
+  background: #fff;
+}
+.l-4.lt-enter {
+  animation: lineDraw .45s cubic-bezier(.16, 1, .3, 1) forwards .40s,
+  scanMoveInverse 2s ease-in-out 1s infinite alternate;
+}
 
-.l-5 { top: calc(99.5 * var(--u)); left: 0; width: calc(1197 * var(--u)); background-color: #ffffff; }
-.l-5.lt-enter { animation: lineDraw 0.6s ease forwards 0.5s; }
-.l-5.lt-moving { animation: lineDraw 0.6s ease forwards 0.5s, scanMove 1.6s ease-in-out 0s infinite alternate; }
+.l-5a {
+  top: calc(99.5 * var(--u));
+  left: calc(-124 * var(--u));
+  width: calc(124 * var(--u));
+  background: #fff;
+  transform-origin: right;
+}
+.l-5a.lt-enter {
+  animation: lineDraw .4s cubic-bezier(.16, 1, .3, 1) forwards .18s;
+}
 
-.l-6 { top: calc(116.5 * var(--u)); left: calc(16 * var(--u)); width: calc(1406 * var(--u)); background-color: #ffffff; }
-.l-6.lt-enter { animation: lineDraw 0.6s ease forwards 0.6s, scanMoveInverse 2.2s ease-in-out 1.2s infinite alternate; }
+.l-5 {
+  top: calc(99.5 * var(--u));
+  left: 0;
+  width: calc(1197 * var(--u));
+  background: #fff;
+}
+.l-5.lt-enter {
+  animation: lineDraw .4s cubic-bezier(.16, 1, .3, 1) forwards .18s;
+}
+.l-5.lt-moving {
+  animation: lineDraw .4s cubic-bezier(.16, 1, .3, 1) forwards .18s,
+  scanMove 1.6s ease-in-out 0s infinite alternate;
+}
 
-/* --- BLOC ROUGE (ARTISTE) --- */
+.l-6 {
+  top: calc(116.5 * var(--u));
+  left: calc(16 * var(--u));
+  width: calc(1406 * var(--u));
+  background: #fff;
+}
+.l-6.lt-enter {
+  animation: lineDraw .45s cubic-bezier(.16, 1, .3, 1) forwards .44s,
+  scanMoveInverse 2.2s ease-in-out 1.2s infinite alternate;
+}
+
+/* BLOC ROUGE - ARTISTE */
+
 .center-band {
   position: absolute;
-  top: 0; left: 0;
-  width: auto; height: var(--red-h);
+  top: 0;
+  left: 0;
+  width: auto;
+  height: var(--red-h);
   display: flex;
   align-items: center;
   z-index: 2;
 }
+
 .red-block {
-  background-color: #c0191a;
+  position: relative;
+  background: #c0191a;
   height: 100%;
   padding: 0 calc(20 * var(--u)) 0 calc(17 * var(--u));
   display: flex;
   align-items: center;
+  opacity: 0;
+}
+
+.red-block.lt-enter {
+  animation: showInstant .01s linear .50s forwards;
+}
+
+.red-block.lt-exit {
+  opacity: 1;
+  animation: lineClose .4s cubic-bezier(.77, 0, .175, 1) forwards;
+}
+
+/* Rideau blanc qui couvre puis découvre le bloc rouge */
+.red-wipe {
+  position: absolute;
+  inset: 0;
+  background: #fff;
   transform: scaleX(0);
   transform-origin: left;
+  z-index: 3;
+  pointer-events: none;
 }
-.red-block.lt-enter { animation: lineDraw 0.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.4s forwards; }
-.red-block.lt-exit  { animation: lineClose 0.4s cubic-bezier(0.77, 0, 0.175, 1) forwards; }
+
+.red-wipe.lt-enter {
+  animation:
+    wipeExpand .10s cubic-bezier(.2, 0, .2, 1) .40s forwards,
+    wipeRetract .42s cubic-bezier(.25, 1, .4, 1) .50s forwards;
+}
 
 .artist-text {
-  color: #ffffff;
+  color: #fff;
   font-family: 'Bebas Neue', Impact, sans-serif;
   font-size: calc(64 * var(--u));
   font-weight: 400;
   letter-spacing: calc(1.5 * var(--u));
   line-height: 1;
   padding-top: calc(3 * var(--u));
-  -webkit-text-stroke: calc(0.8 * var(--u)) #ffffff;
+  -webkit-text-stroke: calc(.8 * var(--u)) #fff;
   white-space: nowrap;
 }
 
-/* --- BLOC BLANC (TITRE) --- */
+/* BLOC BLANC - INFORMATIONS */
+
 .sub-text-area {
   position: absolute;
-  top: var(--red-h); left: 0;
+  top: var(--red-h);
+  left: 0;
   height: var(--white-h);
-  background-color: #ffffff;
+  background: transparent;
   overflow: hidden;
   z-index: 2;
-  width: 0px;
+  width: 0;
   opacity: 0;
-  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
 }
-.sub-text-area.lt-enter { animation: fadeInBlock 0.3s ease 0.6s forwards; }
+
+.sub-text-area.lt-enter {
+  animation: showInstant .01s linear .80s forwards;
+}
+
+.sub-text-area.lt-ready {
+  opacity: 1;
+  transition: opacity .3s ease;
+}
+
 .sub-text-area.lt-exit {
-  animation: lineClose 0.4s cubic-bezier(0.77, 0, 0.175, 1) forwards !important;
-  transition: opacity 0.2s ease !important;
+  opacity: 1 !important;
+  animation: lineClose .4s cubic-bezier(.77, 0, .175, 1) forwards !important;
+}
+
+/* Rideau noir qui couvre puis découvre le bloc blanc */
+.white-wipe {
+  position: absolute;
+  top: var(--red-h);
+  left: 0;
+  height: var(--white-h);
+  background: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.white-wipe.lt-enter {
+  animation:
+    wipeExpand .16s cubic-bezier(.2, 0, .2, 1) .64s forwards,
+    wipeRetract .24s cubic-bezier(.25, 1, .4, 1) .80s forwards;
 }
 
 .rolling-wrapper {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: auto;
   display: flex;
   flex-direction: column;
-  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  transform: translateY(0px);
+  transition: transform .45s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateY(0);
 }
+
 .text-item {
   height: var(--white-h);
   display: inline-flex;
   align-items: center;
-  padding: calc(2 * var(--u)) calc(9 * var(--u)) 0 calc(9 * var(--u));
+  padding: calc(2 * var(--u)) calc(9 * var(--u)) 0;
+  background: #fff;
   color: #1c1c1c;
   font-family: 'Bebas Neue', Impact, sans-serif;
   font-size: calc(36 * var(--u));
   line-height: 1;
   letter-spacing: calc(1.2 * var(--u));
-  -webkit-text-stroke: calc(0.5 * var(--u)) #1c1c1c;
+  -webkit-text-stroke: calc(.5 * var(--u)) #1c1c1c;
   white-space: nowrap;
   width: max-content;
   overflow: hidden;
 }
-.text-item .ti { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-/* Animations */
-@keyframes lineDraw  { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes lineClose { from { transform: scaleX(1); } to { transform: scaleX(0); } }
-@keyframes fadeInBlock { to { opacity: 1; } }
-@keyframes scanMove        { 0% { transform: scaleX(1) translateX(0); } 100% { transform: scaleX(1) translateX(calc(15 * var(--u))); } }
-@keyframes scanMoveInverse { 0% { transform: scaleX(1) translateX(calc(12 * var(--u))); } 100% { transform: scaleX(1) translateX(calc(-8 * var(--u))); } }
+.text-item .ti {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ANIMATIONS */
+
+@keyframes lineDraw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes lineClose {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+@keyframes showInstant {
+  to { opacity: 1; }
+}
+
+@keyframes wipeExpand {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  100% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes wipeRetract {
+  0% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes scanMove {
+  0% { transform: scaleX(1) translateX(0); }
+  100% { transform: scaleX(1) translateX(calc(15 * var(--u))); }
+}
+
+@keyframes scanMoveInverse {
+  0% { transform: scaleX(1) translateX(calc(12 * var(--u))); }
+  100% { transform: scaleX(1) translateX(calc(-8 * var(--u))); }
+}
+
+/* ══ SORTIE = ENTRÉE À L'ENVERS ══ */
+.line.lt-out { animation: lineUndraw .35s cubic-bezier(.7,0,.84,0) both; }
+.l-3.lt-out  { animation-delay: .66s; }
+.l-5.lt-out, .l-5a.lt-out { animation-duration: .4s; animation-delay: .46s; }
+.l-1.lt-out  { animation-duration: .45s; animation-delay: .37s; }
+.l-2.lt-out  { animation-duration: .45s; animation-delay: .27s; }
+.l-4.lt-out  { animation-duration: .45s; animation-delay: .19s; }
+.l-6.lt-out  { animation-duration: .45s; animation-delay: .15s; }
+
+.red-block.lt-out { opacity: 1; animation: holdThenHide .54s linear forwards; }
+.red-wipe.lt-out {
+  animation:
+    wipeCoverR .42s cubic-bezier(.6,0,.75,0) .12s forwards,
+    wipeUncoverL .10s cubic-bezier(.8,0,.8,1) .54s forwards;
+}
+.sub-text-area.lt-out { opacity: 1; transition: none; animation: holdThenHide .24s linear forwards; }
+.white-wipe.lt-out {
+  animation:
+    wipeCoverR .24s cubic-bezier(.6,0,.75,0) 0s forwards,
+    wipeUncoverL .16s cubic-bezier(.8,0,.8,1) .24s forwards;
+}
+
+@keyframes lineUndraw { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@keyframes holdThenHide { 0%, 99.9% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes wipeCoverR   { from { transform-origin: right; transform: scaleX(0); } to { transform-origin: right; transform: scaleX(1); } }
+@keyframes wipeUncoverL { from { transform-origin: left; transform: scaleX(1); } to { transform-origin: left; transform: scaleX(0); } }
 
 /* ── SPLASH ── */
 #splash {
@@ -381,27 +576,48 @@ button {
 <div id="logoOpposite"></div>
 
 <div id="lowerThird" aria-live="polite" role="status">
+
   <div class="line l-1"></div>
   <div class="line l-2"></div>
   <div class="line l-3"></div>
   <div class="line l-4"></div>
   <div class="line l-5a"></div>
-<div class="line l-5"></div>
+  <div class="line l-5"></div>
   <div class="line l-6"></div>
 
+  <!-- BLOC ROUGE -->
   <div class="center-band">
-      <div class="red-block" id="ltRedBlock">
-          <div class="artist-text" id="ltArtistText">ARTISTE</div>
+    <div class="red-block" id="ltRedBlock">
+      <div class="artist-text" id="ltArtistText">
+        ARTISTE
       </div>
+      <div class="red-wipe" id="ltRedWipe"></div>
+    </div>
   </div>
 
+  <!-- RIDEAU NOIR + BLOC BLANC -->
+  <div class="white-wipe" id="ltWhiteWipe"></div>
+
   <div class="sub-text-area" id="whiteBlock">
-      <div class="rolling-wrapper" id="textRoller">
-          <div class="text-item" id="ltItem3"><span class="ti">TITRE</span></div>
-          <div class="text-item" id="ltItem2"><span class="ti">LABEL · ANNÉE</span></div>
-          <div class="text-item" id="ltItem1"><span class="ti">COMPOSITEURS</span></div>
-          <div class="text-item" id="ltItem0"><span class="ti">TITRE</span></div>
+    <div class="rolling-wrapper" id="textRoller">
+
+      <div class="text-item" id="ltItem3">
+        <span class="ti">TITRE</span>
       </div>
+
+      <div class="text-item" id="ltItem2">
+        <span class="ti">LABEL · ANNÉE</span>
+      </div>
+
+      <div class="text-item" id="ltItem1">
+        <span class="ti">COMPOSITEURS</span>
+      </div>
+
+      <div class="text-item" id="ltItem0">
+        <span class="ti">TITRE</span>
+      </div>
+
+    </div>
   </div>
 </div><!-- /#lowerThird -->
 </div><!-- /#tvFrame -->
@@ -574,55 +790,93 @@ let ltTimer = null;
 let ltRollInterval = null;
 let ltActive = false;
 let widthsArray = [0, 0, 0, 0];
+let ltStep = 0;
 let WHITE_H = 50;
 
 function resetLowerThird() {
   clearTimeout(ltTimer);
   clearInterval(ltRollInterval);
+
   const lt = document.getElementById('lowerThird');
   lt.style.display = 'none';
-  
-  const elements = lt.querySelectorAll('.line, .red-block, .sub-text-area');
-  elements.forEach(el => el.classList.remove('lt-enter', 'lt-exit', 'lt-moving'));
-  
-  document.getElementById('textRoller').style.transform = 'translateY(0px)';
+
+  const elements = lt.querySelectorAll(
+    '.line, .red-block, .red-wipe, .sub-text-area, .white-wipe'
+  );
+
+  elements.forEach(el => {
+    el.classList.remove('lt-enter', 'lt-exit', 'lt-moving', 'lt-ready', 'lt-out');
+    el.style.animation = '';
+    el.style.transformOrigin = '';
+  });
+
+  const whiteBlock = document.getElementById('whiteBlock');
+  const whiteWipe = document.getElementById('ltWhiteWipe');
+  whiteBlock.style.transition = '';
+  whiteBlock.style.width = '';
+  whiteBlock.style.opacity = '';
+  whiteBlock.style.left = '';
+  whiteWipe.style.width = '';
+  whiteWipe.style.left = '';
+
+  document.getElementById('textRoller').style.transform =
+    'translateY(0px)';
+
   ltActive = false;
 }
 
 function triggerLowerThird() {
+
   if (ltActive) return;
 
   const current = playlist[currentIndex];
 
-  // Afficher le lower third uniquement pour les liens files.catbox.moe
   if (!current.url.includes('files.catbox.moe')) return;
 
   ltActive = true;
-  
-  document.getElementById('ltArtistText').textContent = current.artiste.toUpperCase();
-  document.getElementById('ltItem0').firstElementChild.textContent = current.titre.toUpperCase();
-  document.getElementById('ltItem1').firstElementChild.textContent = current.compositeurs ? current.compositeurs.toUpperCase() : 'COMPOSITEUR INCONNU';
-  document.getElementById('ltItem2').firstElementChild.textContent = `${current.label.toUpperCase()} ${current.annee}`;
-  document.getElementById('ltItem3').firstElementChild.textContent = current.titre.toUpperCase();
+
+  document.getElementById('ltArtistText').textContent =
+    current.artiste.toUpperCase();
+
+  document.getElementById('ltItem0').firstElementChild.textContent =
+    current.titre.toUpperCase();
+
+  document.getElementById('ltItem1').firstElementChild.textContent =
+    current.compositeurs
+      ? current.compositeurs.toUpperCase()
+      : 'COMPOSITEUR INCONNU';
+
+  document.getElementById('ltItem2').firstElementChild.textContent =
+    `${current.label.toUpperCase()} ${current.annee}`;
+
+  document.getElementById('ltItem3').firstElementChild.textContent =
+    current.titre.toUpperCase();
 
   const lt = document.getElementById('lowerThird');
   lt.style.display = 'block';
+
   WHITE_H = document.getElementById('whiteBlock').offsetHeight || WHITE_H;
 
-  const enterElements = lt.querySelectorAll('.line, .red-block, .sub-text-area');
-  enterElements.forEach(el => el.classList.add('lt-enter'));
-
   const whiteBlock = document.getElementById('whiteBlock');
+  const whiteWipe = document.getElementById('ltWhiteWipe');
   const textRoller = document.getElementById('textRoller');
 
-  // Calculer le décalage : le bloc blanc démarre sous la 4ème lettre du nom de l'artiste
+  /* Calcul de la position du bloc blanc */
+
   const artistText = document.getElementById('ltArtistText');
   const artistStr = artistText.textContent;
+
   let offset3Letters = 0;
+
   {
     const cs = getComputedStyle(artistText);
-    const padLeft = parseFloat(getComputedStyle(document.querySelector('.red-block')).paddingLeft) || 0;
+    const redBlockStyle = getComputedStyle(document.querySelector('.red-block'));
+
+    const padLeft = (parseFloat(redBlockStyle.paddingLeft) || 0) +
+                    (parseFloat(redBlockStyle.borderLeftWidth) || 0);
+
     const measureSpan = document.createElement('span');
+
     measureSpan.style.cssText = `
       font-family: ${cs.fontFamily};
       font-size: ${cs.fontSize};
@@ -632,87 +886,147 @@ function triggerLowerThird() {
       position: absolute;
       visibility: hidden;
     `;
-    // Largeur des 3 premières lettres = bord gauche de la 4ème lettre
-    measureSpan.textContent = artistStr.slice(0, Math.min(3, artistStr.length));
+
+    measureSpan.textContent = artistStr.slice(
+      0,
+      Math.min(3, artistStr.length)
+    );
+
     document.body.appendChild(measureSpan);
+
     offset3Letters = padLeft + measureSpan.offsetWidth;
+
     document.body.removeChild(measureSpan);
   }
 
-  // Largeurs naturelles de chaque ligne du bloc blanc
-  widthsArray = [0, 1, 2, 3].map(i => document.getElementById('ltItem' + i).offsetWidth);
+  /* Largeurs des textes */
 
+  widthsArray = [0, 1, 2, 3].map(i =>
+    document.getElementById('ltItem' + i).offsetWidth
+  );
+
+  /* Positionnement simultané du bloc blanc ET du rideau noir */
   whiteBlock.style.left = `${offset3Letters}px`;
   whiteBlock.style.width = `${widthsArray[0]}px`;
+
+  whiteWipe.style.left = `${offset3Letters}px`;
+  whiteWipe.style.width = `${widthsArray[0]}px`;
+
   textRoller.style.transition = 'none';
   textRoller.style.transform = `translateY(${-3 * WHITE_H}px)`;
-  setTimeout(() => { textRoller.style.transition = ''; }, 50);
 
-  // Aligner la ligne 5 avec le bord gauche du bloc blanc
+  setTimeout(() => {
+    textRoller.style.transition = '';
+  }, 50);
+
+  /* Lancement des animations d'entrée */
+  const enterElements = lt.querySelectorAll(
+    '.line, .red-block, .red-wipe, .sub-text-area, .white-wipe'
+  );
+  enterElements.forEach(el => el.classList.add('lt-enter'));
+
+  /* Une fois le rideau noir rétracté (1.05s), activation de la transition fluide de largeur */
+  setTimeout(() => {
+    whiteBlock.classList.remove('lt-enter');
+    whiteBlock.classList.add('lt-ready');
+  }, 1050);
+
+  /* Ajustement ligne 5 */
+
   const l5 = lt.querySelector('.l-5');
-  if (l5) { l5.style.left = `${offset3Letters}px`; l5.style.width = `calc(1197 * var(--u) - ${offset3Letters}px)`; }
 
-  // Aligner la ligne 5a pour qu'elle arrive exactement au début de la ligne 5
+  if (l5) {
+    l5.style.left = `${offset3Letters}px`;
+    l5.style.width =
+      `calc(1197 * var(--u) - ${offset3Letters}px)`;
+  }
+
   const l5a = lt.querySelector('.l-5a');
-  if (l5a) l5a.style.width = `calc(124 * var(--u) + ${offset3Letters}px)`;
 
-  // Déclencher le mouvement de la ligne 5 quand le bloc blanc est visible (après fadeInBlock : 0.6s délai + 0.3s durée = 0.9s)
+  if (l5a) {
+    l5a.style.width =
+      `calc(124 * var(--u) + ${offset3Letters}px)`;
+  }
+
+  /* Ligne 6 : ne dépasse pas le rectangle blanc par la gauche.
+     Bord gauche = bord gauche du rectangle blanc + 8u (marge pour l'oscillation
+     scanMoveInverse qui recule de 8u). Le bord droit reste à 1422u comme avant. */
+  const l6 = lt.querySelector('.l-6');
+
+  if (l6) {
+    l6.style.left = `calc(${offset3Letters}px + 8 * var(--u))`;
+    l6.style.width = `calc(1414 * var(--u) - ${offset3Letters}px)`;
+  }
+
   setTimeout(() => {
     if (l5) l5.classList.add('lt-moving');
   }, 900);
 
+  /* Défilement des informations */
+
   let step = 0;
+  ltStep = 0;
+
   ltRollInterval = setInterval(() => {
+
     step++;
+    ltStep = step;
+
     if (step <= 3) {
-      textRoller.style.transform = `translateY(${-3 * WHITE_H + step * WHITE_H}px)`;
-      whiteBlock.style.width = `${widthsArray[step]}px`;
+
+      /* La fenêtre de découpe est élargie au plus large des textes ;
+         chaque rectangle blanc garde sa largeur exacte. Les deux
+         descendent ensemble : l'ancien sort en bas, le nouveau entre par le haut. */
+      whiteBlock.style.width = `${Math.max(...widthsArray)}px`;
+
+      textRoller.style.transform =
+        `translateY(${-3 * WHITE_H + step * WHITE_H}px)`;
     }
-    if (step === 3) clearInterval(ltRollInterval);
+
+    if (step === 3) {
+      clearInterval(ltRollInterval);
+    }
+
   }, 2000);
+
+  /* Durée d'affichage */
 
   ltTimer = setTimeout(() => {
     closeLowerThird();
   }, SHOW_DURATION * 1000);
 }
 
+/* FERMETURE DU LOWER THIRD */
+
 function closeLowerThird() {
+  if (!ltActive) return;
+  clearTimeout(ltTimer);
+  clearInterval(ltRollInterval);
+
   const lt = document.getElementById('lowerThird');
   const whiteBlock = document.getElementById('whiteBlock');
 
-  lt.querySelectorAll('.line, .red-block').forEach(el => {
-    el.classList.remove('lt-enter', 'lt-moving');
-    el.style.transformOrigin = 'left';
+  // La fenêtre reprend la largeur du texte affiché pour que la sortie reste identique
+  whiteBlock.style.width = `${widthsArray[ltStep] || widthsArray[0]}px`;
+
+  // On enlève l'état d'entrée et on joue la séquence inverse
+  lt.querySelectorAll('.line, .red-block, .red-wipe, .sub-text-area, .white-wipe').forEach(el => {
+    el.classList.remove('lt-enter', 'lt-moving', 'lt-ready', 'lt-exit');
+    el.style.animation = '';
     void el.offsetWidth;
-    el.style.animation = 'lineClose 0.5s cubic-bezier(0.77,0,0.175,1) forwards';
+    el.classList.add('lt-out');
   });
 
-  whiteBlock.classList.remove('lt-enter');
-  whiteBlock.style.transition = 'width 0.45s cubic-bezier(0.77,0,0.175,1), opacity 0.2s ease';
-  whiteBlock.style.width = '0px';
-  whiteBlock.style.opacity = '0';
-  whiteBlock.style.left = '0px';
-
+  // Fin de la sortie : remise à zéro complète
   setTimeout(() => {
-    lt.style.display = 'none';
-    lt.querySelectorAll('.line, .red-block').forEach(el => {
-      el.style.animation = '';
-      el.style.transformOrigin = '';
-    });
+    resetLowerThird();
     const l5 = lt.querySelector('.l-5');
-    if (l5) { l5.style.left = '0px'; l5.style.width = ''; }
+    if (l5) { l5.style.left = ''; l5.style.width = ''; }
     const l5a = lt.querySelector('.l-5a');
     if (l5a) l5a.style.width = '';
-    whiteBlock.style.transition = '';
-    whiteBlock.style.width = '';
-    whiteBlock.style.opacity = '';
-    whiteBlock.style.left = '';
-    const textRoller = document.getElementById('textRoller');
-    textRoller.style.transition = 'none';
-    textRoller.style.transform = `translateY(${-3 * WHITE_H}px)`;
-    setTimeout(() => { textRoller.style.transition = ''; }, 50);
-    ltActive = false;
-  }, 600);
+    const l6 = lt.querySelector('.l-6');
+    if (l6) { l6.style.left = ''; l6.style.width = ''; }
+  }, 1100);
 }
 
 player.addEventListener('timeupdate', () => {
